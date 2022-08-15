@@ -1,0 +1,44 @@
+#include <cstdio>
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+class Person{
+
+private://私人物品,只能类内调用
+	int age, height;
+	double money;
+	string books[1000];
+	int get_height(){
+		return height;
+	}
+	
+	
+public://公共设施
+	string name;
+
+	void say() {
+		cout<<"I'm "<<name<<endl;
+	}
+	int get_age() {
+		return age;
+	}
+	void add_money(double x) {
+		money+=x;
+	}	
+};
+
+
+
+int main(){
+	
+	Person lql;
+//	lql.age=18;错误,因为.age是私有
+	cout<<lql.get_age();
+	lql.add_money(100);
+	
+	
+	
+	return 0;
+}
